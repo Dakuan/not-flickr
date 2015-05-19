@@ -1,0 +1,34 @@
+{
+  "name": "wrdbr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development node_modules/.bin/nodemon -q src/server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer-core": "^5.1.11",
+    "css-loader": "^0.12.1",
+    "express": "^4.12.4",
+    "extract-text-webpack-plugin": "^0.8.0",
+    "flummox": "^4.0.0-alpha2",
+    "immutable": "^3.7.2",
+    "jade": "^1.9.2",
+    "node-libs-browser": "^0.5.0",
+    "react": "^0.13.3",
+    "style-loader": "^0.12.2",
+    "webpack": "^1.9.7"
+  },
+  "devDependencies": {
+    "babel-core": "^5.4.3",
+    "babel-loader": "^5.1.2",
+    "gulp": "^3.8.11",
+    "less": "^2.5.0",
+    "less-loader": "^2.2.0",
+    "nodemon": "^1.3.7",
+    "webpack-dev-server": "^1.8.2"
+  }
+}
