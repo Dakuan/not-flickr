@@ -1,14 +1,12 @@
-import { Flux } from 'flummox';
-import { MessageActions } from './actions/message-actions';
-import { MessageStore } from './stores/message-store';
+import { Flux } from "flummox";
+import FeedActions from "./actions/feed-actions";
+import FeedStore from "./stores/feed-store";
 
-export class AppFlux extends Flux {
+export default class AppFlux extends Flux {
 
   constructor() {
     super();
-
-    this.createActions('messages', MessageActions);
-    this.createStore('messages', MessageStore, this);
+    this.createActions("feeds", FeedActions);
+    this.createStore("feeds", FeedStore, this);
   }
-
 }

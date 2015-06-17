@@ -1,6 +1,6 @@
-import { Store } from 'flummox';
+import { Store } from "flummox";
 
-export class ImmutableStore extends Store {
+export default class ImmutableStore extends Store {
   static assignState(oldState, newState) {
     return newState;
   }
