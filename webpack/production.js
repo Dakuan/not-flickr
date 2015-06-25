@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '../build'),
-    filename: 'wrdbr.js'
+    filename: 'app.js'
   },
   module: {
     loaders: [{
@@ -38,7 +38,7 @@ module.exports = {
     }]
   },
   plugins: [
-    new ExtractTextPlugin("wrdbr.css", {
+    new ExtractTextPlugin("app.css", {
       allChunks: true
     }),
     definePlugin

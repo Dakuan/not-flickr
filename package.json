@@ -27,6 +27,7 @@
     "flummox": "4.0.0-alpha2",
     "immutable": "^3.7.3",
     "jade": "^1.9.2",
+    "nconf": "^0.7.1",
     "node-libs-browser": "^0.5.0",
     "postcss-loader": "^0.4.3",
     "ramda": "^0.15.1",

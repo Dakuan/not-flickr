@@ -21,7 +21,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '../build'),
-    filename: 'wrdbr.js'
+    filename: 'app.js'
   },
   devtool: '#inline-source-map',
   module: {
@@ -43,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin("wrdbr.css", {
+    new ExtractTextPlugin("app.css", {
       allChunks: true
     }),
     definePlugin

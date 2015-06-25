@@ -2,6 +2,7 @@ import React from "react";
 import Router from "react-router";
 import AppFlux from "../../flux/flux";
 import routes from "../../ui/routes";
+import CONFIG from "../../../config/config";
 
 export function renderSpa(res, data, path) {
   var fx = new AppFlux();
@@ -13,7 +14,8 @@ export function renderSpa(res, data, path) {
     }));
     res.render("index", {
       app: html,
-      data: JSON.stringify(data)
+      data: JSON.stringify(data),
+      config: CONFIG.get()
     });
   });
 }
