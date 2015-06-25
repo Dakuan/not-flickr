@@ -44,7 +44,7 @@ describe("FeedStore", () => {
         subject.state = subject.state.set("feed[]", "a_feed");
       });
       it("should return that feed", () => {
-        expect(subject.fetch()).to.eq("rubbish");
+        expect(subject.fetch()).to.eq("a_feed");
       });
     });
 
