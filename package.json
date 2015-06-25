@@ -17,6 +17,7 @@
     "axios": "^0.5.4",
     "babel": "^5.5.8",
     "babel-core": "^5.4.5",
+    "babel-loader": "^5.1.2",
     "babel-runtime": "^5.5.8",
     "body-parser": "^1.13.1",
     "bootstrap": "^3.3.4",
@@ -42,7 +43,6 @@
   },
   "devDependencies": {
     "babel-eslint": "^3.1.15",
-    "babel-loader": "^5.1.2",
     "chai": "^3.0.0",
     "chai-spies": "^0.6.0",
     "eslint": "^0.23.0",
