@@ -5,7 +5,7 @@ const api = {
   fetch: async function(tags = []) {
     let query = R.pipe(
       R.map((tag) => {
-        return `tags[]=${tag}`;
+        return `tags[]=${tag}`
       }),
       (ts) => {
         return ts.join("&");
