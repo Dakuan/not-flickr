@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === 'development') {
   require("../../webpack/server");
 }
 
-app.listen(3010, function() {
-  console.log('listening on 3010');
+var port = process.env.PORT || 3010;
+app.listen(port, function() {
+  console.log("listening on " + port);
 });
