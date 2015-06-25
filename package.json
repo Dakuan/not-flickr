@@ -38,6 +38,7 @@
     "babel": "^5.5.8",
     "babel-eslint": "^3.1.15",
     "babel-loader": "^5.1.2",
+    "chai": "^3.0.0",
     "chai-spies": "^0.6.0",
     "eslint": "^0.23.0",
     "eslint-plugin-react": "^2.5.2",
