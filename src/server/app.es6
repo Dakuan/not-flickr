@@ -10,19 +10,20 @@ let app = express();
 app.set("views", "src/server/views/");
 app.set("view engine", "jade");
 
+// public
+app.use("/public", express.static(path.join(__dirname, "../../build")));
+app.use("/public", express.static(path.join(__dirname, "../../assets/images")));
+
 // middleware
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// public
-app.use("/public", express.static(path.join(__dirname, "../../build")));
-app.use("/public", express.static(path.join(__dirname, "../../assets/images")));
-
 // routes
 app.use(apiRoute);
 app.use(indexRoute);
 
+// this function needs an arity of 4 to work
 /*eslint no-unused-vars:0 */
 app.use((err, req, res, next) => {
 	console.log(err);

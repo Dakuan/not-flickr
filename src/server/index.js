@@ -1,6 +1,5 @@
 var fs = require("fs");
 var path = require("path");
-var nock = require("nock");
 
 global.window = {};
 global.navigator = {};
