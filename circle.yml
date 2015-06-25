@@ -1,8 +1,9 @@
 test:
   override:
     - npm run ci
+
 deployment:
   production:
     branch: master
-      heroku:
-        appname: not-flickr
+    heroku:
+      appname: not-flickr
