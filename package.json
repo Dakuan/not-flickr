@@ -1,9 +1,10 @@
 {
-  "name": "wrdbr",
+  "name": "not-flickr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server/index.js",
   "scripts": {
+    "start": "node src/server/index.js",
     "bundle": "webpack -p --config ./webpack/production",
     "ci": "npm test && npm run lint",
     "test": "mocha --recursive --require babelhook $(find tests -name '*.es6')",
