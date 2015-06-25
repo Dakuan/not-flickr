@@ -5,8 +5,10 @@ let router = express.Router;
 let route = router();
 
 route.get("/api/feed", (req, res, next) => {
-  feedData().then((feed) => {
-    res.json(feed);
+  feedData(req.query.tags).then((feed) => {
+    setTimeout(() => {
+      res.json(feed);
+    }, 0);
   }, (err) => {
     next(err);
   });

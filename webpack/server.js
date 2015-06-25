@@ -9,7 +9,7 @@ var server = new WebpackDevServer(webpack(config), {
   }
 });
 
-server.listen(3000, "localhost", function(err) {
+server.listen(3001, "localhost", function(err) {
   if (err) throw "webpack-dev-server: " + err;
-  console.log("[webpack-dev-server]", "http://localhost:3000/webpack-dev-server/index.html");
+  console.log("[webpack-dev-server]", "http://localhost:3001/webpack-dev-server/index.html");
 });

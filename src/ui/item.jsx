@@ -1,19 +1,26 @@
-import React from "react";
+import React from "react/addons";
 
-export default class Item extends React.Component {
+let PureRenderMixin = React.addons.PureRenderMixin;
 
-	render () {
-		// this isn't a faux pax in React land believe it or not.
+let Item = React.createClass({
+
+	mixins: [PureRenderMixin],
+
+	propTypes: {
+		media: React.PropTypes.object
+	},
+
+	render: function() {
 		let style = {
-			height: "200px",
-			background: `url("${this.props.media.m}") no-repeat center`,
-			backgroundSize: "cover"
+			background: `url("${this.props.media.m}") no-repeat center`
 		};
 
 		return (
-			<div className="col-xs-6 col-sm-4 col-md-3" key={this.props.id}>
+			<div className="col-xs-6 col-sm-4 col-md-3 flickr-item">
 				<div className="thumbnail" style={style} />
 			</div>
 		);
 	}
-}
+});
+
+export default Item;

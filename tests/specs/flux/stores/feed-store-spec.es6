@@ -11,14 +11,14 @@ let mockActions = {
 };
 
 let mockFlux = {
-  getActions () {
-    return mockActions
-  },
-  getActionIds () {
-    return {
-      fetchFeed: "fetchFeed"
-    };
-  }
+  getActions() {
+      return mockActions
+    },
+    getActionIds() {
+      return {
+        fetchFeed: "fetchFeed"
+      };
+    }
 };
 
 let subject;
@@ -41,7 +41,7 @@ describe("FeedStore", () => {
     describe("when there is a feed in the store", () => {
       beforeEach(() => {
         subject = new FeedStore(mockFlux);
-        subject.state = subject.state.set("feed", "a_feed");
+        subject.state = subject.state.set("feed[]", "a_feed");
       });
       it("should return that feed", () => {
         expect(subject.fetch()).to.eq("a_feed");
@@ -73,13 +73,19 @@ describe("FeedStore", () => {
   describe("when fetchFeedSuccess is handled", () => {
     beforeEach(() => {
       subject = new FeedStore(mockFlux);
-      TestUtils.simulateActionAsync(subject, "fetchFeed", "success", {data: "a_feed"});
+      TestUtils.simulateActionAsync(subject, "fetchFeed", "success", {
+        feed: {
+          title: "Feed",
+          items: []
+        },
+        tags: []
+      });
     });
     it("should set the feed", () => {
-    	expect(subject.state.get("feed")).to.eq("a_feed");
+      expect(subject.getFeed().title).to.eq("Feed");
     });
     it("should set loading to false", () => {
-    	expect(subject.state.get("loading")).to.be.false;
+      expect(subject.state.get("loading")).to.be.false;
     });
   });
 });

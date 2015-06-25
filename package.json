@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "bundle": "webpack -p --config ./webpack/production",
     "ci": "npm test && npm run lint",
     "test": "mocha --recursive --require babelhook $(find tests -name '*.es6')",
     "lint": "node_modules/.bin/eslint src --ext .es6,.jsx"
@@ -16,6 +17,7 @@
     "babel-core": "^5.4.5",
     "babel-runtime": "^5.5.8",
     "bootstrap": "^3.3.4",
+    "classnames": "^2.1.2",
     "css-loader": "^0.12.1",
     "express": "^4.12.4",
     "extract-text-webpack-plugin": "^0.8.0",

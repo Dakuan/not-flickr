@@ -3,7 +3,6 @@ var path = require('path'),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
   webpack = require('webpack');
 
-
 var definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV === 'development'))
 });
@@ -11,8 +10,6 @@ var definePlugin = new webpack.DefinePlugin({
 module.exports = {
   context: path.join(__dirname, '../src'),
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3001',
-    'webpack/hot/only-dev-server',
     './stylesheets/wrdbr.less',
     './client/boot.es6'
   ],
@@ -23,7 +20,6 @@ module.exports = {
     path: path.join(__dirname, '../build'),
     filename: 'wrdbr.js'
   },
-  devtool: '#inline-source-map',
   module: {
     loaders: [{
       test: /(.es6|.jsx)/,
@@ -42,7 +38,6 @@ module.exports = {
     }]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin("wrdbr.css", {
       allChunks: true
     }),

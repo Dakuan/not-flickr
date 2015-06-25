@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import indexRoute from "./routes/index";
 import apiRoute from "./routes/api";
+import bodyParser from "body-parser";
 
 let app = express();
 
@@ -9,15 +10,23 @@ let app = express();
 app.set("views", "src/server/views/");
 app.set("view engine", "jade");
 
+// middleware
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+// public
 app.use("/public", express.static(path.join(__dirname, "../../build")));
 app.use("/public", express.static(path.join(__dirname, "../../assets/images")));
 
-app.use(indexRoute);
+// routes
 app.use(apiRoute);
+app.use(indexRoute);
 
 /*eslint no-unused-vars:0 */
 app.use((err, req, res, next) => {
-  res.send(err);
+	console.log(err);
+  res.send(err.stack);
 });
 
 module.exports = app;
