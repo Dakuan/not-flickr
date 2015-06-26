@@ -11,6 +11,6 @@ export default class SocketStore extends ImmutableStore {
   }
 
   _onSetSocket(id) {
-  	this.setState(this.state.set("id", id));
+    this.setState(this.state.set("id", id));
   }
 }
