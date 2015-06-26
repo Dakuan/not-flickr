@@ -1,0 +1,5 @@
+exclude_paths:
+  - "webpack/"
+  - "tests/"
+  - "gulpfile.js"
+  - "babelhooks.js"
