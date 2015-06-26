@@ -8,7 +8,8 @@
     "bundle": "webpack -p --config ./webpack/production",
     "ci": "npm test && npm run lint",
     "test": "mocha --recursive --require babelhook $(find tests -name '*.es6')",
-    "lint": "node_modules/.bin/eslint src --ext .es6,.jsx"
+    "lint": "node_modules/.bin/eslint src --ext .es6,.jsx",
+    "postinstall": "npm run bundle"
   },
   "author": "",
   "license": "ISC",
