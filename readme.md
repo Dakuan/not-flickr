@@ -14,6 +14,11 @@ An example app using an antique Flickr API to demonstrate modern front end engin
 * Integration tests with [Nock](https://github.com/pgte/nock) and [Supertest](https://github.com/visionmedia/supertest)
 * BDD specs with [Mocha](http://mochajs.org/) and [Chai](http://chaijs.com/)
 * Sweet development workflow with [Webpack](http://webpack.github.io/) and [Gulp](http://gulpjs.com/)
+* Event sourced with live debugging
+* Continuous integation / deployment with [CircleCI](https://circleci.com) and [Heroku](http://heroku.com)
+
+## Play
+It's on [heroku](http://not-flickr.herokuapp.com)
 
 ## Requirements
 
@@ -44,6 +49,7 @@ All interactions are sent to the server via websockets. You can listen in on ano
 
 ## Todo:
 
+* slicker animations and what not
 * error handling
 * ~~live debug~~
 * gzip assets
