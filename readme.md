@@ -33,11 +33,20 @@ $ npm install gulp -g
 $ gulp
 ```
 
+## Live Debug
+
+All interactions are sent to the server via websockets. You can listen in on another users session:
+
+1. open the app with a  [debug flag](http://not-flickr.herokuapp.com?debug=true)
+2. copy the debug token
+3. open another tab with the listen flag eg `http://not-flickr.herokuapp.com?listenTo=DEBUG_TOKEN`
+4. profit.
+
 ## Todo:
 
 * error handling
-* live debug
+* ~~live debug~~
 * gzip assets
 * ~~deploy to heroku~~
 * ~~add CI~~
-* try out Code Climate
+* ~~try out Code Climate~~
