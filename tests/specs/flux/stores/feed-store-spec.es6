@@ -52,9 +52,12 @@ describe("FeedStore", () => {
       beforeEach(() => {
         subject = new FeedStore(mockFlux);
       });
-      it("should fetch the feed", () => {
+      it("should fetch the feed", (done) => {
         subject.fetch();
-        expect(mockActions.fetchFeed).to.have.been.called();
+        setTimeout(() => {
+          expect(mockActions.fetchFeed).to.have.been.called();
+          done()
+        }, 2)
       });
       afterEach(() => {
         mockActions.fetchFeed = chai.spy();
