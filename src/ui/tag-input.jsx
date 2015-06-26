@@ -61,14 +61,14 @@ let TagInput = React.createClass({
 		e.preventDefault();
 		this.props.onAddTag(this.props.new);
 		let tags = [this.props.new].concat(this.props.tags);
-		this.transitionTo("app", {}, {tags: tags});
+		this.transitionTo("app", {}, R.merge(this.getQuery(), {tags: tags}));
 	},
 
 	_onRemove: function(tag) {
 		return () => {
 			this.props.onRemoveTag(tag);
 			let tags = R.filter((t) => { return t !== tag; }, this.props.tags);
-			this.transitionTo("app", {}, {tags: tags});
+			this.transitionTo("app", {}, R.merge(this.getQuery(), {tags: tags}));
 		};
 	},
 

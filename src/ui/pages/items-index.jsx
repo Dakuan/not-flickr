@@ -3,6 +3,7 @@ import FluxComponent from "flummox/component";
 import { State as RouterState } from "react-router";
 import DefaultLayout from "../layouts/default-layout";
 import TagInput from "../tag-input";
+import DebugBar from "../debug-bar";
 import Feed from "../feed";
 
 let ItemsIndexPage = React.createClass({
@@ -12,6 +13,14 @@ let ItemsIndexPage = React.createClass({
 	render: function() {
 		return (
 			<DefaultLayout>
+				<FluxComponent flux={this.props.flux} connectToStores={{
+					sockets: store => {
+						return {
+							socketId: store.state.get("id")
+						};
+					}}}>
+					<DebugBar />
+				</FluxComponent>
 				<FluxComponent flux={this.props.flux} connectToStores={{
 					tags: (store) => {
 						return {
@@ -41,6 +50,7 @@ let ItemsIndexPage = React.createClass({
 				}}>
 					<Feed flux={this.props.flux} />
 				</FluxComponent>
+
 			</DefaultLayout>
 		);
 	}
