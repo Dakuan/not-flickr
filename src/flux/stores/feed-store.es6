@@ -31,7 +31,10 @@ export default class FeedStore extends ImmutableStore {
     if (feed) {
       return feed;
     } else if(!this.state.get("loading")) {
-      this.actions.fetchFeed(tags);
+      this.setState(this.state.set("loading", true));
+      setTimeout(() => {
+        this.actions.fetchFeed(tags);
+      }, 0);
     }
   }
 

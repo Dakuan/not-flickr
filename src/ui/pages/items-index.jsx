@@ -10,6 +10,22 @@ let ItemsIndexPage = React.createClass({
 
 	mixins: [RouterState],
 
+	getInitialState: function() {
+		return {
+			tags: this.getQuery().tags
+		};
+	},
+
+	componentWillMount: function() {
+		let tagStore = this.props.flux.getStore("tags");
+		tagStore.on("change", this._onTagChange);
+	},
+
+	componentWillUnmount: function() {
+		let tagStore = this.props.flux.getStore("tags");
+		tagStore.removeEventListener("change", this._onTagChange);
+	},
+
 	render: function() {
 		return (
 			<DefaultLayout>
@@ -35,15 +51,15 @@ let ItemsIndexPage = React.createClass({
 					}
 				}}>
 					<TagInput
-							onChange={this.props.flux.getActions("tags").update}
-							onAddTag={this.props.flux.getActions("tags").addTag}
-							onRemoveTag={this.props.flux.getActions("tags").removeTag} />
+						onChange={this.props.flux.getActions("tags").update}
+						onAddTag={this.props.flux.getActions("tags").addTag}
+						onRemoveTag={this.props.flux.getActions("tags").removeTag} />
 				</FluxComponent>
 
 				<FluxComponent flux={this.props.flux} connectToStores={{
 					feeds: store => {
 						return {
-							feed: store.fetch(this.getQuery().tags),
+							feed: store.fetch(this.state.tags),
 							loading: store.state.get("loading")
 						};
 					}
@@ -53,6 +69,13 @@ let ItemsIndexPage = React.createClass({
 
 			</DefaultLayout>
 		);
+	},
+
+	_onTagChange: function () {
+		let tagStore = this.props.flux.getStore("tags");
+		this.setState({
+			tags: tagStore.state.get("tags")
+		});
 	}
 });
 
