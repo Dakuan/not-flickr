@@ -1,12 +1,14 @@
 # Not Flickr
 
+[![Circle CI](https://circleci.com/gh/Dakuan/not-flickr/tree/master.svg?style=svg&circle-token=e2cfce5268e1280113c07025492c8e7d4e9f474c)](https://circleci.com/gh/Dakuan/not-flickr/tree/master)
+
 An example app using an antique Flickr API to demonstrate modern front end engineering techniques.
 
 ## Features
 
 * High performance view layer via [React.js](http://facebook.github.io/react/)
 * Server side rendering via [Node.js](https://nodejs.org/)
-* Progresive enhancment (sort of works without javascript)
+* Progresive enhancement (sort of works without javascript)
 * Next generation javascript (es6/7) in a functional lisp-like style thanks to [Babel](https://babeljs.io/), [Ramda](http://ramdajs.com/0.15/index.html) and [Immutable.js](http://facebook.github.io/immutable-js/)
 * Unidirectional dataflow with [Flummox](http://acdlite.github.io/flummox)
 * Integration tests with [Nock](https://github.com/pgte/nock) and [Supertest](https://github.com/visionmedia/supertest)
@@ -36,6 +38,6 @@ $ gulp
 * error handling
 * live debug
 * gzip assets
-* deploy to heroku
-* add CI
+* ~~deploy to heroku~~
+* ~~add CI~~
 * try out Code Climate
