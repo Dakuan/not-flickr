@@ -44,8 +44,9 @@ All interactions are sent to the server via websockets. You can listen in on ano
 
 1. open the app with a  [debug flag](http://not-flickr.herokuapp.com?debug=true)
 2. copy the debug token
-3. open another tab with the listen flag eg `http://not-flickr.herokuapp.com?listenTo=DEBUG_TOKEN`
-4. profit.
+3. open another tab with the [debug flag](http://not-flickr.herokuapp.com?debug=true)
+4. paste the debug token into the form field and press enter / click the bug button
+5. profit.
 
 ## Todo:
 
