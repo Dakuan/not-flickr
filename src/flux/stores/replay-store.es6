@@ -12,7 +12,7 @@ export default class ReplayStore extends ImmutableStore {
     this.register(actionIds.addReplayAction, this._onAddReplayAction);
   }
 
-  _onAddReplayAction (action) {
+  _onAddReplayAction(action) {
     this.setState(this.state.set("actions", this.state.get("actions").unshift(action)));
   }
 }

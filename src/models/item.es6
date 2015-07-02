@@ -3,5 +3,5 @@
 import I from "immutable";
 
 export default I.Record({
-	media: {}
+  media: {}
 });

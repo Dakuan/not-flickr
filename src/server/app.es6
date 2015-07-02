@@ -26,7 +26,7 @@ app.use(indexRoute);
 // this function needs an arity of 4 to work
 /*eslint no-unused-vars:0 */
 app.use((err, req, res, next) => {
-	console.log(err);
+  console.log(err);
   res.send(err.stack);
 });
 
