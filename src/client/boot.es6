@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const flux = new AppFlux(data);
   flux.deserialize(data);
 
-	flux.dispatcher.register(replay(flux));
+  flux.dispatcher.register(replay(flux));
   Router.run(routes, Router.HistoryLocation, function(Handler) {
     const app = React.createElement(Handler, {
       flux: flux

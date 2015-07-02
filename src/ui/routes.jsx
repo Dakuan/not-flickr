@@ -5,8 +5,8 @@ import App from "./app";
 import ItemsIndex from "./pages/items-index";
 
 module.exports = (
-	<Route name="app" path="/" handler={App}>
-		<Route name="feed" handler={ItemsIndex} />
-		<DefaultRoute handler={ItemsIndex} />
-	</Route>
+  <Route name="app" path="/" handler={App}>
+    <Route name="feed" handler={ItemsIndex} />
+    <DefaultRoute handler={ItemsIndex} />
+  </Route>
 );

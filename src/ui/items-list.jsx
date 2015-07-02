@@ -5,41 +5,41 @@ import Item from "./item";
 var masonryMixin;
 
 let masonryOptions = {
-	gutter: 0,
-	itemSelector: ".flickr-item"
+  gutter: 0,
+  itemSelector: ".flickr-item"
 };
 
 if(typeof document === "undefined") {
-	masonryMixin = function() {};
+  masonryMixin = function() {};
 } else {
-	masonryMixin = require("react-masonry-mixin");
+  masonryMixin = require("react-masonry-mixin");
 }
 
 const ItemsList = React.createClass({
 
-	mixins: [masonryMixin("masonryContainer", masonryOptions)],
+  mixins: [masonryMixin("masonryContainer", masonryOptions)],
 
-	propTypes: {
-		items: React.PropTypes.instanceOf(I.List).isRequired
-	},
+  propTypes: {
+    items: React.PropTypes.instanceOf(I.List).isRequired
+  },
 
-	getDefaultProps: function() {
-		return {
-			items: []
-		};
-	},
+  getDefaultProps: function() {
+    return {
+      items: []
+    };
+  },
 
-	render: function() {
-		return (
-			<div className="row" ref="masonryContainer">
-				{
-					this.props.items.map((item, index) => {
-						return (<Item {...item.toJS()} key={index} />);
-					})
-				}
-			</div>
-		);
-	}
+  render: function() {
+    return (
+      <div className="row" ref="masonryContainer">
+        {
+          this.props.items.map((item, index) => {
+            return (<Item {...item.toJS()} key={index} />);
+          })
+        }
+      </div>
+    );
+  }
 
 });
 

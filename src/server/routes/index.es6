@@ -13,7 +13,10 @@ route.get("/", (req, res, next) => {
         feed: feed,
         tags: req.query.tags || []
       },
-      tags: req.query.tags
+      tags: req.query.tags,
+      sockets: {
+        debug: req.query.debug
+      }
     };
     try {
       renderSpa(res, d, req.originalUrl);

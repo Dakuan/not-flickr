@@ -6,9 +6,7 @@ let route = router();
 
 route.get("/api/feed", (req, res, next) => {
   feedData(req.query.tags).then((feed) => {
-    setTimeout(() => {
-      res.json(feed);
-    }, 0);
+    res.json(feed);
   }, (err) => {
     next(err);
   });

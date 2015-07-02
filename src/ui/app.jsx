@@ -3,15 +3,15 @@ import { RouteHandler } from "react-router";
 
 export default class App extends React.Component {
 
-	constructor () {
-		super();
-	}
+  constructor () {
+    super();
+  }
 
-	render () {
-		return (
-			<div>
-				<RouteHandler {...this.props} />
-			</div>
-		);
-	}
+  render () {
+    return (
+      <div>
+        <RouteHandler {...this.props} />
+      </div>
+    );
+  }
 }
