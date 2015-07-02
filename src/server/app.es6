@@ -13,6 +13,7 @@ app.set("view engine", "jade");
 // public
 app.use("/public", express.static(path.join(__dirname, "../../build")));
 app.use("/public", express.static(path.join(__dirname, "../../assets/images")));
+app.use("/ZeroClipboard.swf", express.static(path.join(__dirname, "../../node_modules/zeroclipboard/dist/ZeroClipboard.swf")));
 
 // middleware
 app.use(bodyParser.urlencoded({

@@ -1,16 +1,18 @@
 import io from "socket.io-client";
-import qs from "query-string";
 
 export default (flux) => {
-  let query = qs.parse(window.location.search);
+  var listenTo;
+  let socketsStore = flux.getStore("sockets");
+  socketsStore.on("change", () => {
+    listenTo = socketsStore.state.get("listeningSocketId");
+  });
   let socket = io();
   socket.on("connect", () => {
-    if (query.debug) {
-      flux.getActions("sockets").setSocketId(socket.id);
-    }
+    flux.getActions("sockets").setBroadcastSocketId(socket.id);
   });
   socket.on("replay", (payload) => {
-    if (query.listenTo === payload.socket) {
+    if (listenTo === payload.socket) {
+      flux.getActions("replay").addReplayAction(payload.action);
       flux.dispatcher.dispatch(payload.action);
     }
   });

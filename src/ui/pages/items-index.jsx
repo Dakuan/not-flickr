@@ -32,7 +32,14 @@ let ItemsIndexPage = React.createClass({
 				<FluxComponent flux={this.props.flux} connectToStores={{
 					sockets: store => {
 						return {
-							socketId: store.state.get("id")
+							broadcastSocketId: store.state.get("broadcastSocketId"),
+							listeningSocketId: store.state.get("listeningSocketId"),
+							debug: store.state.get("debug")
+						};
+					},
+					replay: (store)=> {
+						return {
+							actions: store.state.get("actions")
 						};
 					}}}>
 					<DebugBar />

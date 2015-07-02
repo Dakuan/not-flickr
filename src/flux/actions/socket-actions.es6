@@ -2,7 +2,15 @@ import { Actions } from "flummox";
 
 export default class SocketActions extends Actions {
 
-	setSocketId(id) {
+	setBroadcastSocketId(id) {
 		return id;
+	}
+
+	setListeningSocketId(id) {
+		return id;
+	}
+
+	stopListening() {
+		return true;
 	}
 }
