@@ -3,6 +3,7 @@ import path from "path";
 import indexRoute from "./routes/index";
 import apiRoute from "./routes/api";
 import bodyParser from "body-parser";
+import compress from "compression";
 
 let app = express();
 
@@ -18,6 +19,7 @@ app.use("/public", express.static(path.join(__dirname, "../../assets/images")));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(compress());
 
 // routes
 app.use(apiRoute);

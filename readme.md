@@ -53,7 +53,7 @@ All interactions are sent to the server via websockets. You can listen in on ano
 * slicker animations and what not
 * error handling
 * ~~live debug~~
-* gzip assets
+* ~~gzip assets~~
 * ~~deploy to heroku~~
 * ~~add CI~~
 * ~~try out Code Climate~~
