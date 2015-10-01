@@ -2,8 +2,8 @@ test:
   override:
     - npm run ci
 machine:
-	node:
-		version: 4.1.0
+  node:
+    version: 4.1.0
 deployment:
   production:
     branch: master
