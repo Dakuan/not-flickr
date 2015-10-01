@@ -11,6 +11,9 @@
     "lint": "node_modules/.bin/eslint src --ext .es6,.jsx",
     "postinstall": "npm run bundle"
   },
+  "engines": {
+    "node": "4.1.1"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -59,7 +62,7 @@
     "gulp-develop-server": "^0.4.3",
     "gulp-eslint": "^0.14.0",
     "gulp-mocha": "^2.1.1",
-    "jsdom": "^3.0.0",
+    "jsdom": "^6.5.1",
     "less": "^2.5.0",
     "nock": "^2.6.0",
     "nodemon": "^1.3.7",
