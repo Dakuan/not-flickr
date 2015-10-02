@@ -32,9 +32,7 @@ export default class TagStore extends ImmutableStore {
     this.setState(
       this.state.set(
         "tags",
-        tags.filterNot(R.eq(tag))
-      )
-    );
+        tags.filterNot(R.eq(tag))));
   }
 
   static deserialize(d) {

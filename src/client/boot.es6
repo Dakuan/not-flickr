@@ -7,12 +7,12 @@ import replay from "../flux/middleware/replay";
 
 const data = document.getElementById("payload").value;
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
   const flux = new AppFlux(data);
   flux.deserialize(data);
 
   flux.dispatcher.register(replay(flux));
-  Router.run(routes, Router.HistoryLocation, function(Handler) {
+  Router.run(routes, Router.HistoryLocation, (Handler) => {
     const app = React.createElement(Handler, {
       flux: flux
     });
